@@ -1,23 +1,21 @@
 {
   "name": "<%= pkgName %>",
   "version": "1.0.0",
-  "description": "AWS Lambda: <%= appName %> (Generated with ❤️ by generator-aws-lambda-typescript, Rado, Ola & lovely Ewa)",
+  "description": "AWS Lambda: <%= appName %>",
   "scripts": {
-    "watch": "webpack --watch",
+    "prebuild": "./node_modules/distize/lib/bin/cli.js --no-files --out dist",
     "lint": "eslint .",
     "build": "webpack build --mode production",
-    "package": "cd dist && zip -9 lambda.zip index.js",
-    "package:prod": "eslint . && webpack build --mode production && jest && cd dist && zip -9 lambda.zip index.js",
-    "test": "jest"
+    "test": "jest",
+    "start": "ts-node -e \"const event=require('./test/test-event.json'); const main=require('./src/index'); main.handler(event,{});\""
   },
-  "keywords": [
-    "AWS",
-    "Lambda"
-  ],
   "license": "<%= license %>",
   "devDependencies": {
     "@jest/globals": "^29.3.1",
     "@typescript-eslint/eslint-plugin": "^5.46.0",
+    "@types/aws-lambda": "^8.10.109",
+    "aws-sdk": "^2.1272.0",
+    "distize": "^2.2.2",
     "eslint": "^8.29.0",
     "eslint-plugin-prettier": "^4.2.1",
     "jest": "^29.3.1",
@@ -25,11 +23,11 @@
     "ts-jest": "^29.0.3",
     "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.4",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1"
+    "typescript": "^4.9.4"
   },
   "dependencies": {
-    "@types/aws-lambda": "^8.10.109"
+    "dotenv": "^16.0.3",
+    "winston": "^3.8.2",
+    "zod": "^3.20.0"
   }
 }
