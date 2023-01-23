@@ -1,13 +1,26 @@
 {
-    "compilerOptions": {
-        "lib": [ "ES2022"],
-
-        "alwaysStrict": true,
-        "esModuleInterop": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "strictNullChecks": true,
-        "sourceMap": true,
-        "strict": true,
-    }
+  "compilerOptions": {
+    "lib": [
+      "es2021"
+    ],
+    "target": "es2021",
+    "module": "commonjs",
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "sourceMap": false,
+    "strict": true,
+    "incremental": false,
+    "rootDir": "src",
+    "outDir": "./dist"
+  },
+  "include": [
+    "src/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

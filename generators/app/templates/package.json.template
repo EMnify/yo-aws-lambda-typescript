@@ -5,7 +5,7 @@
   "scripts": {
     "prebuild": "./node_modules/distize/lib/bin/cli.js --no-files --out dist",
     "lint": "eslint .",
-    "build": "webpack build --mode production",
+    "build": "tsc",
     "test": "jest",
     "start": "ts-node -e \"const event=require('./test/test-event.json'); const main=require('./src/index'); main.handler(event,{});\""
   },

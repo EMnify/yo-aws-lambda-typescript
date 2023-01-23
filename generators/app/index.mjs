@@ -30,14 +30,15 @@ export default class extends Generator {
         );
         [
             'src/index.ts',
+            'src/config.ts',
+            'src/logger.ts',
             'test/index.test.ts',
+            'test/test-event.json',
             '.editorconfig',
             '.eslintrc.js',
             '.prettierrc.json',
             'jest.config.ts',
             'tsconfig.json',
-            'webpack.config.js',
-            'README.md'
         ].forEach(file => this.fs.copy(this.templatePath(file), this.destinationPath(file)));
 
         // Git ignore can't be added to repo, with dot name, as it will be

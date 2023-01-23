@@ -1,5 +1,5 @@
 {
-  "name": "generator-aws-lambda-typescript",
+  "name": "generator-lambda-ts",
   "version": "1.0.0",
   "description": "Yeoman generator to create AWS Lambda in TypeScript with strong size-optimizations and production operations quality",
   "files": [
